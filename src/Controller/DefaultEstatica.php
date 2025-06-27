@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultEstatica extends AbstractController
 {
-    #[Route('/sitio/{pagina}', name: 'app_estatica', requeriments:['pagina'=>'patrocinadores|licencia|condiciones_uso.html|privacidad'])]
-    public function estaticaAction($pagina) 
+    #[Route('/sitio/{pagina}', name: 'app_estatica', requirements:['pagina'=>'patrocinadores|licencia|condiciones_uso|privacidad'])]
+    public function estaticaAction($pagina='patrocinadores') 
     {
         return $this->render('estatica/'.$pagina.'.html.twig');
     }
