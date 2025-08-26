@@ -1,0 +1,39 @@
+<html><body><!-- borrar -->
+
+<h1>Disertantes</h1>
+{% for disertante in disertantes %}
+<div>
+<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<div class="grid_2_alpha">
+    <strong>Nombre: </strong>{{disertante.nombre}} {{disertante.apellidos}}
+</div>
+<div class="grid_2">
+    <strong>Id: </strong>{{disertante.id}}
+</div>
+<div class="grid_2">
+    <strong>Bibliografia: </strong>{{disertante.biografia}}
+</div>
+<div class="grid_2">
+    <strong>Telefono: </strong>{{disertante.telefono}}
+</div>
+<div class="grid_2">
+    <strong>Direccion: </strong>{{disertante.direccion}}
+</div>
+<div class="grid_2">
+    <strong>Url: </strong><a>{{disertante.url}}</a>
+</div>
+<div class="grid_2">
+    <strong>Email: </strong>{{disertante.email}}
+</div>
+<div class="grid_2">
+    <strong>Twitter: </strong>{{disertante.twitter}}
+</div>
+<div class="grid_2">
+    <strong>Linkedin: </strong>{{disertante.linkedin}}
+</div>
+
+{% endfor %}
+</ul>
+</div>
+
+</body></html> <!-- borrar -->

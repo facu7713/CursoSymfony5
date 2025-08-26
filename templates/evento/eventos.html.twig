@@ -1,0 +1,15 @@
+<html><body><!-- borrar -->
+
+<h1>Eventos</h1>
+{% for evento in eventos %}
+<div>
+    <p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+    <div class="grid_2_alpha">
+        <h3>Tiempo de la charla: {{evento.hora|date('H:i')}}-{{evento.horaFinalizacion|date('H:i')}}</h3>
+    </div>
+    <div class="grid_10_omega">
+        <a href="{{ path('app_evento', {'slug': evento.slug} ) }}">{{evento.titulo}}</a>
+        <p>{{evento.descripcion}}</p>
+</div>
+{% endfor %}
+</body></html> <!-- borrar -->
