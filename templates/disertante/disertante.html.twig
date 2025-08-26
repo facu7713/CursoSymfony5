@@ -1,0 +1,18 @@
+<html><body><!-- borrar -->
+
+    <h1>{{disertante.nombreCompleto}}</h1>
+    <p>{{disertante.biografia}}</p>
+    <p><strong>Télefono</strong>{{disertante.telefono}}</p>
+    <p><strong>Página</strong>{{disertante.url}}</p>
+    <p><strong>Imparte los siguientes eventos</strong></p>
+    {% for evento in disertante.eventos %}
+        <li>
+            <a href="{{ path('app_evento', {'slug': evento.slug} ) }}">{{evento.titulo}}</a>
+        </li>
+    {% else %}
+        <li>
+            <p>No imparte ningún evento</p>
+        </li>
+    {% endfor %}
+
+</body></html> <!-- borrar -->

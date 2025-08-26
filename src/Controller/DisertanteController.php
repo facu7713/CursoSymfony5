@@ -19,6 +19,24 @@ class DisertanteController extends AbstractController
         $disertantes = $em->getRepository(Disertante::class)->findDisertantesAlfabeticamente();
         return $this->render('disertante\disertantes.html.twig' , ['disertantes'=>$disertantes]);
     }
+    /**
+     * @Route("/disertante/{id}", name="app_disertante")
+     */
+    public function disertanteAction($id): Response
+    {
+        $em = $this->getDoctrine()->getManager(); 
+        $disertante = $em->getRepository(Disertante::class)->findOneBy(array( 
+            'id'=>$id
+        ));
+        
+        if(!$disertante){
+            throw $this->createNotFoundException('No tiene eventos este disertantes');
+        }
+
+        return $this->render('disertante/disertante.html.twig', [
+            'disertante' => $disertante
+        ]);
+    }
 }
 
 
