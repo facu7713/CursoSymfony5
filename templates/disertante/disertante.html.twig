@@ -2,17 +2,27 @@
 
     <h1>{{disertante.nombreCompleto}}</h1>
     <p>{{disertante.biografia}}</p>
-    <p><strong>Télefono</strong>{{disertante.telefono}}</p>
-    <p><strong>Página</strong>{{disertante.url}}</p>
+    <p><strong>Télefono: </strong>{{disertante.telefono}}</p>
+    <p><strong>Página: </strong>{{disertante.url}}</p>
     <p><strong>Imparte los siguientes eventos</strong></p>
-    {% for evento in disertante.eventos %}
-        <li>
-            <a href="{{ path('app_evento', {'slug': evento.slug} ) }}">{{evento.titulo}}</a>
-        </li>
-    {% else %}
-        <li>
-            <p>No imparte ningún evento</p>
-        </li>
-    {% endfor %}
+        <ul>
+        {% for evento in disertante.eventos %}
+            <li>
+                <a href="{{ path('app_evento', {'slug': evento.slug} ) }}">{{evento.titulo}}</a>
+            </li>
+        {% else %}
+            <li>
+                <p>No imparte ningún evento</p>
+            </li>
+        {% endfor %}
+        </ul>
+        </div class="grid_3 omega">
+            <p><strong>Más información</strong></p>
+            <ul>
+                {% if disertante.twitter %}
+                    <li><a href="{{ disertante.twitter }}">{{ disertante.twitter }}</a></li>
+                {% endif %}
+            </ul>
+        <div>
 
 </body></html> <!-- borrar -->
